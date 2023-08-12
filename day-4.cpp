@@ -1,47 +1,3 @@
-// #include <iostream>
-// using namespace std;
-
-// class Person
-// {
-//     int age;
-
-// public:
-//     Person()
-//     {
-//         cin >> age;
-//         if (age<0){
-//             age=0;
-//             cout<<"Age is not valid, setting age to 0."<<endl;
-//             yearPasses();
-//         }
-//     }
-//     void amIOld(){
-//         if(age<13)
-//             cout<<"You are young."<<endl;
-
-//         else if(age>=13 && age<18)
-//             cout<<"You are a teenager."<<endl;
-
-//         else
-//             cout<<"You are old.";
-//     }
-//     void yearPasses(){
-//         age = age+3;
-//         amIOld();
-//     }
-
-// };
-
-// int main(){
-//     int T;
-//     cin>>T;
-//     while(T>0){
-//         Person p;
-//         p.amIOld();
-//         p.yearPasses();
-
-//     }
-// }
 
 #include <iostream>
 using namespace std;
@@ -49,18 +5,21 @@ using namespace std;
 class Person
 {
 
-    int age;
 
 public:
-    Person(int age)
+    int age;
+    Person(int intitalAge)
     {
+        // cout<<age<<endl;
         // cin >> age;
-        if (age < 0)
+        if (intitalAge < 0)
         {
             age = 0;
             cout << "Age is not valid, setting age to 0." << endl;
             yearPasses();
         }
+        else 
+            age = intitalAge;
     }
     void amIOld()
     {
@@ -75,7 +34,8 @@ public:
     }
     void yearPasses()
     {
-        age = age + 1;
+        ++age;
+        // cout<<age;
     }
 };
 
@@ -93,6 +53,7 @@ int main()
         {
             p.yearPasses();
         }
+        // cout<<p.age;
         p.amIOld();
 
         cout << '\n';
